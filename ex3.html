@@ -9,7 +9,7 @@
       
         <!-- add HTML code here -->
          <input type="text" id="userinput" placeholder="enter items">
-         <button id="enter" onclick="addList()">Enter</button>
+         <button id="enter" onclick="addListAfterClick()">Enter</button>
       <ul>
          <li>Notebook</li>
          <li>Jello</li>
@@ -22,14 +22,14 @@
       <script>
       
         // add code here
-         function addList(){
+         function addListAfterClick(){
             var input = document.getElementById("userinput")
             var li = document.createElement("li");
+            var ul = document.getElementsByTagName("ul")[0];
             
             if (input.value.length>0){
-               var node = document.createTextNode(input.value);
-               li.appendChild(node);
-               var ul = document.getElementsByTagName("ul")[0];
+               var textNode = document.createTextNode(input.value);
+               li.appendChild(textNode);
                ul.appendChild(li);
                input="";
             }
