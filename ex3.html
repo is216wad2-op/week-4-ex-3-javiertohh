@@ -25,10 +25,15 @@
          function addList(){
             var x = document.getElementById("stuff").value
             var addThis = document.createElement("li");
-            var node = document.createTextNode(x);
-            addThis.appendChild(node);
-            var addFinal = document.getElementsByTagName("ul")[0];
-            addFinal.appendChild(addThis);
+            
+            if (x.length>0){
+               var node = document.createTextNode(x);
+               addThis.appendChild(node);
+               var addFinal = document.getElementsByTagName("ul")[0];
+               addFinal.appendChild(addThis);
+               x="";
+            }
+            
          }
       </script>
  
