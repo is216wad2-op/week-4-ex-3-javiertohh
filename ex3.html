@@ -8,7 +8,8 @@
       <p>Get it done today</p>
       
         <!-- add HTML code here -->
-
+         <input type="text" id="stuff" placeholder="enter items">
+         <input type="submit" name="Enter" onclick="addList()">
       <ul>
          <li>Notebook</li>
          <li>Jello</li>
@@ -21,7 +22,14 @@
       <script>
       
         // add code here
-
+         function addList(){
+            var x = document.getElementById("stuff").value
+            var addThis = document.createElement("li");
+            var node = document.createTextNode(x);
+            addThis.appendChild(node);
+            var addFinal = document.getElementsByTagName("ul")[0];
+            addFinal.appendChild(addThis);
+         }
       </script>
  
    </body>
